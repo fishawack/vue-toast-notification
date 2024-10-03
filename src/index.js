@@ -1,5 +1,6 @@
 import ToastComponent from './js/Component.vue';
 import {useToast} from './js/api';
+import {createComponent} from './js/helpers';
 import ToastPositions from './js/positions';
 
 const ToastPlugin = {
@@ -11,4 +12,4 @@ const ToastPlugin = {
 }
 
 export default ToastPlugin;
-export {useToast, ToastPlugin, ToastComponent, ToastPositions}
+export {useToast, ToastPlugin, ToastComponent, ToastPositions, createComponent}

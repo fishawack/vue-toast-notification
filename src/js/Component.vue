@@ -11,8 +11,11 @@
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
       @click="whenClicked">
-      <div class="v-toast__icon"></div>
-      <p class="v-toast__text" v-html="message"></p>
+      <slot v-if="$slots.default" />
+      <template v-else>
+          <div class="v-toast__icon"></div>
+          <p class="v-toast__text" v-html="message"></p>
+        </template>
     </div>
   </transition>
 </template>

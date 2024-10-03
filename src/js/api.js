@@ -4,7 +4,7 @@ import eventBus from './bus.js';
 
 export const useToast = (globalProps = {}) => {
   return {
-    open(options) {
+    open(options, slots = []) {
       let message = null;
       if (typeof options === 'string') message = options;
 
@@ -14,7 +14,7 @@ export const useToast = (globalProps = {}) => {
 
       const propsData = Object.assign({}, defaultProps, globalProps, options);
 
-      const instance = createComponent(ToastComponent, propsData, document.body);
+      const instance = createComponent(ToastComponent, propsData, document.body, slots);
 
       return {
         dismiss: instance.ctx.dismiss
