@@ -23,35 +23,35 @@ export const useToast = (globalProps = {}) => {
     clear() {
       eventBus.emit('toast-clear')
     },
-    success(message, options = {}) {
+    success(message, options = {}, slots = {}) {
       return this.open(Object.assign({}, {
         message,
         type: 'success'
-      }, options))
+      }, options), slots)
     },
-    error(message, options = {}) {
+    error(message, options = {}, slots = {}) {
       return this.open(Object.assign({}, {
         message,
         type: 'error'
-      }, options))
+      }, options), slots)
     },
-    info(message, options = {}) {
+    info(message, options = {}, slots = {}) {
       return this.open(Object.assign({}, {
         message,
         type: 'info'
-      }, options))
+      }, options), slots)
     },
-    warning(message, options = {}) {
+    warning(message, options = {}, slots = {}) {
       return this.open(Object.assign({}, {
         message,
         type: 'warning'
-      }, options))
+      }, options), slots)
     },
-    default(message, options = {}) {
+    default(message, options = {}, slots = {}) {
       return this.open(Object.assign({}, {
         message,
         type: 'default'
-      }, options))
+      }, options), slots)
     }
   }
 };
