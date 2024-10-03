@@ -4,7 +4,7 @@ import eventBus from './bus.js';
 
 export const useToast = (globalProps = {}) => {
   return {
-    open(options, slots = []) {
+    open(options, slots = {}) {
       let message = null;
       if (typeof options === 'string') message = options;
 
