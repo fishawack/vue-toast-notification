@@ -11,7 +11,7 @@
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
       @click="whenClicked">
-      <slot v-if="$slots.default" :message="message" :type="type" />
+      <slot v-if="$slots.default" />
       <template v-else>
           <div class="v-toast__icon"></div>
           <p class="v-toast__text" v-html="message"></p>
@@ -32,7 +32,7 @@ export default defineComponent({
   props: {
     message: {
       type: String,
-      required: true
+      default: ''
     },
     type: {
       type: String,
